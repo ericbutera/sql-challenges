@@ -10,16 +10,17 @@ UNION
 (SELECT city, LENGTH(city) len FROM station GROUP BY city ORDER BY len DESC, city ASC LIMIT 1)
 ORDER BY city
 
--- something like this would be interesting to lower amont of work against station
-WITH city_lengths AS (
+-- use window function
+WITH len_data AS (
 SELECT
 	city,
-	LENGTH(city) len
-FROM station
+	length(city) len,
+	max(length(city)) over () max_length,
+	min(length(city)) over () min_length
+from station
 group by city
-ORDER BY city
+order by len, city
 )
-SELECT
-	MIN(len) as minimum,
-	MAX(len) as maximum
-FROM city_lengths
+(SELECT city, len FROM len_data WHERE len = min_length LIMIT 1)
+UNION
+(SELECT city, len FROM len_data WHERE len = max_length LIMIT 1)
