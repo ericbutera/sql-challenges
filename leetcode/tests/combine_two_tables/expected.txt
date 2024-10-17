@@ -1,0 +1,4 @@
+| firstName | lastName | city          | state    |
+|-----------|----------|---------------|----------|
+| Allen     | Wang     | null          | null     |
+| Bob       | Alice    | New York City | New York |
