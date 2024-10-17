@@ -6,8 +6,14 @@ help: ## Help
 
 # TODO: specific test
 
+.PHONY: build
+build: ## build docker image
+	docker build -t sqlite-test-runner .
+
+.PHONY: run
+run: ## run docker image
+	docker run --rm sqlite-test-runner
+
 .PHONY: test
 test: ## run all tests
-	docker build -t sqlite-test-runner . \
-	&& \
-	docker run --rm sqlite-test-runner sh
+	make build && make run
