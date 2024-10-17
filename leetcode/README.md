@@ -16,8 +16,20 @@ Expected directory structure:
 
 ## Running tests
 
+A `Makefile` is provided to run tests among other things:
+
 ```sh
 make test
+```
+
+Expected output:
+
+```txt
+Running test in /app/tests/combine_two_tables
+Test passed!
+Running test in /app/tests/duplicate_emails
+Test passed!
+All tests passed!
 ```
 
 ## TODO
