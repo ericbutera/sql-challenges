@@ -17,3 +17,8 @@ run: ## run docker image
 .PHONY: test
 test: ## run all tests
 	make build && make run
+
+.PHONY: local-ci
+local-ci: ## verify github action works locally
+	# https://github.com/nektos/act
+	cd .. && act
