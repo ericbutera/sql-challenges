@@ -1,7 +1,9 @@
 # SQL Exercises
 
-# Clients
-- [dbeaver](https://dbeaver.io/download/)
+This repo contains various SQL exercises from platforms like LeetCode, HackerRank, etc.
 
-# Credits
-- [us cities database](https://github.com/kelvins/US-Cities-Database)
+---
+
+Latest work can be found in [leetcode](./leetcode/).
+
+Some previous attempts can be found in [hackerrank](./hackerrank/).
